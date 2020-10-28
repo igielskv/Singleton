@@ -10,6 +10,8 @@ import Foundation
 class AppSettings {
     static let shared = AppSettings()
     
+    // To serialize getting and setting methods prevents crashes while AppSettings are acessed from multiple threads on concurrent queues, but they might couse performance issues.
+    
     private let serialQueue = DispatchQueue(label: "serialQueue")
     
     private var settings: [String: Any] = [
@@ -22,14 +24,28 @@ class AppSettings {
     }
     
     func string(forKey key: String) -> String? {
-        return settings[key] as? String
+        var result: String?
+        
+        serialQueue.sync {
+            result = settings[key] as? String
+        }
+        
+        return result
     }
     
     func int(forKey key: String) -> Int? {
-        return settings[key] as? Int
+        var result: Int?
+        
+        serialQueue.sync {
+            result = settings[key] as? Int
+        }
+        
+        return result
     }
     
     func set(value: Any, forKey key: String) {
-        settings[key] = value
+        serialQueue.sync {
+            settings[key] = value
+        }
     }
 }
