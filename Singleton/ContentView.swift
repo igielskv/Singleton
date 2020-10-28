@@ -13,10 +13,10 @@ struct ContentView: View {
             Text("AppSettings")
                 .font(.title)
                 .padding()
-            if let theme = AppSettings.shared.string(for: "Theme") {
+            if let theme = AppSettings.shared.string(forKey: "Theme") {
                 Text("Theme: \(theme)")
             }
-            if let maxConcurrentDownloads = AppSettings.shared.int(for: "MaxConcurrentDownloads") {
+            if let maxConcurrentDownloads = AppSettings.shared.int(forKey: "MaxConcurrentDownloads") {
                 Text("MaxConcurrentDownloads: \(maxConcurrentDownloads)")
             }
             

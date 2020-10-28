@@ -44,11 +44,11 @@ class SingletonTests: XCTestCase {
         
         for callIndex in 1 ... callCount {
             concurrentQueue.async {
-                AppSettings.shared.set(value: callIndex, for: String(callIndex))
+                AppSettings.shared.set(value: callIndex, forKey: String(callIndex))
             }
         }
         
-        while AppSettings.shared.int(for: String(callCount)) != callCount {
+        while AppSettings.shared.int(forKey: String(callCount)) != callCount {
             
         }
         

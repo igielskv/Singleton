@@ -10,6 +10,8 @@ import Foundation
 class AppSettings {
     static let shared = AppSettings()
     
+    private let serialQueue = DispatchQueue(label: "serialQueue")
+    
     private var settings: [String: Any] = [
         "Theme": "Dark",
         "MaxConcurrentDownloads": 4
@@ -19,15 +21,15 @@ class AppSettings {
         
     }
     
-    func string(for key: String) -> String? {
+    func string(forKey key: String) -> String? {
         return settings[key] as? String
     }
     
-    func int(for key: String) -> Int? {
+    func int(forKey key: String) -> Int? {
         return settings[key] as? Int
     }
     
-    func set(value: Any, for key: String) {
+    func set(value: Any, forKey key: String) {
         settings[key] = value
     }
 }
