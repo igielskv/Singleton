@@ -29,4 +29,33 @@ class SingletonTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testAppSettingsCreation() {
+        // let newAppSettings = AppSettings()
+        // 'AppSettings' initializer is inaccessible due to 'private' protection level
+    }
+    
+    func testConcurrentUsage() {
+        let concurrentQueue = DispatchQueue(label: "concurrentQueue", attributes: .concurrent)
+        
+        let expect = expectation(description: "Using AppSettings.shared from multiple threads shall succeed")
+        
+        let callCount = 100
+        
+        for callIndex in 1 ... callCount {
+            concurrentQueue.async {
+                AppSettings.shared.set(value: callIndex, for: String(callIndex))
+            }
+        }
+        
+        while AppSettings.shared.int(for: String(callCount)) != callCount {
+            
+        }
+        
+        expect.fulfill()
+        
+        waitForExpectations(timeout: 5) { (error) in
+            XCTAssertNil(error, "Test expectation failed")
+        }
+    }
 }
