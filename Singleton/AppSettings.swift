@@ -12,7 +12,7 @@ class AppSettings {
     
     private var settings: [String: Any] = [
         "Theme": "Dark",
-        "MaxConcurentDownloads": 4
+        "MaxConcurrentDownloads": 4
     ]
     
     private init() {
@@ -25,5 +25,9 @@ class AppSettings {
     
     func int(for key: String) -> Int? {
         return settings[key] as? Int
+    }
+    
+    func set(value: Any, for key: String) {
+        settings[key] = value
     }
 }

@@ -16,8 +16,8 @@ struct ContentView: View {
             if let theme = AppSettings.shared.string(for: "Theme") {
                 Text("Theme: \(theme)")
             }
-            if let maxConcurentDownloads = AppSettings.shared.int(for: "MaxConcurentDownloads") {
-                Text("MaxConcurentDownloads: \(maxConcurentDownloads)")
+            if let maxConcurrentDownloads = AppSettings.shared.int(for: "MaxConcurrentDownloads") {
+                Text("MaxConcurrentDownloads: \(maxConcurrentDownloads)")
             }
             
         }
