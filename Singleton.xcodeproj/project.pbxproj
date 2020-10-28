@@ -13,6 +13,7 @@
 		9FA6420325495A3F00C4B1EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FA6420225495A3F00C4B1EE /* Preview Assets.xcassets */; };
 		9FA6420E25495A3F00C4B1EE /* SingletonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6420D25495A3F00C4B1EE /* SingletonTests.swift */; };
 		9FA6421925495A3F00C4B1EE /* SingletonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6421825495A3F00C4B1EE /* SingletonUITests.swift */; };
+		9FA6422D25495B3B00C4B1EE /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6422C25495B3B00C4B1EE /* AppSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		9FA6421425495A3F00C4B1EE /* SingletonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SingletonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA6421825495A3F00C4B1EE /* SingletonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonUITests.swift; sourceTree = "<group>"; };
 		9FA6421A25495A3F00C4B1EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FA6422C25495B3B00C4B1EE /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				9FA641FB25495A3E00C4B1EE /* SingletonApp.swift */,
 				9FA641FD25495A3E00C4B1EE /* ContentView.swift */,
+				9FA6422C25495B3B00C4B1EE /* AppSettings.swift */,
 				9FA641FF25495A3F00C4B1EE /* Assets.xcassets */,
 				9FA6420425495A3F00C4B1EE /* Info.plist */,
 				9FA6420125495A3F00C4B1EE /* Preview Content */,
@@ -261,6 +264,7 @@
 			files = (
 				9FA641FE25495A3E00C4B1EE /* ContentView.swift in Sources */,
 				9FA641FC25495A3E00C4B1EE /* SingletonApp.swift in Sources */,
+				9FA6422D25495B3B00C4B1EE /* AppSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
